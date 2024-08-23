@@ -13,11 +13,17 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@element-plus/icons-vue": "^2.3.1",
+    "element-plus": "^2.8.0",
+    "jszip": "^3.10.1",
+    "jszip-utils": "^0.1.0",
     "pinia": "^2.1.7",
+    "svgaplayerweb": "^2.3.2",
     "vue": "^3.4.29",
     "vue-router": "^4.3.3"
   },
   "devDependencies": {
+    "@iconify-json/ep": "^1.1.16",
     "@rushstack/eslint-patch": "^1.8.0",
     "@tsconfig/node20": "^20.1.4",
     "@types/node": "^20.14.5",
@@ -30,7 +36,11 @@
     "eslint-plugin-vue": "^9.23.0",
     "npm-run-all2": "^6.2.0",
     "prettier": "^3.2.5",
+    "sass": "^1.77.8",
     "typescript": "~5.4.0",
+    "unplugin-auto-import": "^0.18.2",
+    "unplugin-icons": "^0.19.2",
+    "unplugin-vue-components": "^0.27.4",
     "vite": "^5.3.1",
     "vue-tsc": "^2.0.21"
   }
