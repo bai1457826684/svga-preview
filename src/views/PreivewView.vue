@@ -31,7 +31,7 @@ onMounted(() => {
   <main class="container">
     <el-upload
       ref="elUploadInstance"
-      class="upload-demo"
+      class="upload"
       drag
       multiple
       :auto-upload="false"
@@ -39,9 +39,11 @@ onMounted(() => {
       :show-file-list="false"
       :on-change="onChangeFile"
     >
-      <!-- <el-icon class="el-icon--upload"><i-ep-upload-filled /></el-icon> -->
-      <div ref="svgaInstance" class="svga"></div>
-      <div class="el-upload__text">Drop file here or <em>click to upload</em></div>
+      <div class="upload-content">
+        <!-- <el-icon class="el-icon--upload"><i-ep-upload-filled /></el-icon> -->
+        <div ref="svgaInstance" class="svga"></div>
+        <div class="el-upload__text">Drop file here or <em>click to upload</em></div>
+      </div>
     </el-upload>
   </main>
 </template>
@@ -53,9 +55,37 @@ onMounted(() => {
   justify-content: center;
   height: 100vh;
 
+  .upload {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+
+    --el-fill-color-blank: #000;
+
+    :deep() {
+      .el-upload,
+      .el-upload-dragger {
+        width: 100%;
+        height: 100%;
+      }
+      .el-upload-dragger {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    &-content {
+      border-radius: 10px;
+      background-color: #fff;
+    }
+  }
+
   .svga {
-    width: 300px;
-    height: 400px;
+    width: 960px;
+    height: 500px;
   }
 }
 </style>
