@@ -19,6 +19,7 @@
     "jszip-utils": "^0.1.0",
     "pinia": "^2.1.7",
     "svgaplayerweb": "^2.3.2",
+    "video-animation-player": "^1.0.5",
     "vue": "^3.4.29",
     "vue-router": "^4.3.3"
   },
