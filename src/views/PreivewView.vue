@@ -48,7 +48,7 @@ const vapExtend = ref<Record<string, string>>({})
 const playVap = async (file: File) => {
   if (!vapInstance.value) return
   // 获取json信息
-  let json = {}
+  let json: { [key: string]: any } = {}
   let blob: Blob | null = null
   // 方法一 => json配置信息从vap/MP4中获取
   // 请求类型为blob(该方法播放只请求一遍MP4,但iOS不兼容)
@@ -58,6 +58,10 @@ const playVap = async (file: File) => {
   const src = await blobToUrl(blob)
   // const src = options.vapUrl;
   console.log(src, previewStore.isAccurate)
+  // 解决帧率为25时，播放没有动画只有声音的问题
+  if (json?.info?.fps && ![20, 30, 60].includes(json.info.fps)) {
+    json.info.fps = json.info.fps < 40 ? 30 : 60
+  }
 
   // 播放
   vap.play({
