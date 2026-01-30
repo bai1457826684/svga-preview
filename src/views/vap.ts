@@ -89,10 +89,11 @@ const parseJson = (
       continue
     }
     // 还没遍历到目标字符串
+    if (targetStr[i] !== str) {
+      i = 0
+    }
     if (targetStr[i] === str) {
       i++
-    } else {
-      i = 0
     }
   }
   return null
